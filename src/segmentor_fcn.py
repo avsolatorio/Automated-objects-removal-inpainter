@@ -59,7 +59,7 @@ def segmentor(seg_net,img,dev,objects):
     else:
         net=dlab
     if dev == 'cuda':
-        trf = T.Compose([T.Resize(400),
+        trf = T.Compose([T.Resize(680),
                  #T.CenterCrop(224),
         T.ToTensor(), 
         T.Normalize(mean = [0.485, 0.456, 0.406], 
