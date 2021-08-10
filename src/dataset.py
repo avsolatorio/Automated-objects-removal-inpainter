@@ -40,8 +40,9 @@ class Dataset(torch.utils.data.Dataset):
     def __getitem__(self, index):
         try:
             item = self.load_item(index)
-        except:
+        except Exception as e:
             print('loading error: ' + self.data[index])
+            print(e)
             item = self.load_item(0)
 
         return item
